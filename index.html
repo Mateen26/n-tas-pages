@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noor Tasbeeh - Digital Islamic Prayer Bead Counter</title>
+<style>
+  :root {
+    --bg: #041B18;
+    --surface: #052E28;
+    --gold: #C9A84C;
+    --gold-light: #E8C96B;
+    --gold-dim: #7A6228;
+    --text: #F2ECD8;
+    --text-secondary: rgba(242, 236, 216, 0.6);
+    --border: rgba(230, 213, 163, 0.12);
+  }
+  .light {
+    --bg: #FFFFFF;
+    --surface: #FAFAFA;
+    --gold: #8B6914;
+    --gold-light: #B8860B;
+    --gold-dim: #634A10;
+    --text: #1A1A1A;
+    --text-secondary: #555555;
+    --border: #E0E0E0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    padding: 0;
+    min-height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  header {
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 24px 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 24px;
+    margin-bottom: 16px;
+    font-size: 14px;
+  }
+  .nav-links a {
+    color: var(--gold);
+    text-decoration: none;
+  }
+  .nav-links a:hover { text-decoration: underline; }
+  .nav-links a.active { font-weight: 700; text-decoration: underline; }
+  .logo-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 8px;
+  }
+  .logo-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .logo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .app-name {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--gold);
+    letter-spacing: 3px;
+  }
+  .tagline {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 20px 60px;
+  }
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--gold);
+    margin: 32px 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--gold-light);
+    margin: 20px 0 8px;
+  }
+  p { margin: 10px 0; color: var(--text-secondary); font-size: 15px; }
+  ul {
+    margin: 10px 0 10px 20px;
+    color: var(--text-secondary);
+    font-size: 15px;
+  }
+  li { margin: 6px 0; }
+  strong { color: var(--text); }
+  a { color: var(--gold); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .feature-grid {
+    display: grid;
+    gap: 16px;
+    margin-top: 16px;
+  }
+  .feature-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .feature-card h3 {
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .feature-icon { font-size: 24px; }
+  .contact-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 16px;
+  }
+  .contact-box a {
+    display: inline-block;
+    margin-top: 8px;
+    font-weight: 600;
+  }
+  .faq-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 12px;
+  }
+  .faq-item h3 {
+    margin-top: 0;
+    font-size: 15px;
+    color: var(--text);
+  }
+  .faq-item p { margin: 8px 0 0; font-size: 14px; }
+  .footer {
+    text-align: center;
+    padding: 24px 20px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+  .footer a { color: var(--gold); }
+</style>
+</head>
+<body>
+<header>
+  <nav class="nav-links">
+    <a href="/" id="nav-home" class="active">Home</a>
+    <a href="/privacy" id="nav-privacy">Privacy Policy</a>
+    <a href="/terms" id="nav-terms">Terms of Service</a>
+  </nav>
+  <div class="logo-section">
+    <div class="logo-icon"><img src="images/logo.png" alt="Noor Tasbeeh"></div>
+    <span class="app-name">NOOR TASBEEH</span>
+  </div>
+  <p class="tagline">Your Digital Islamic Prayer Bead Counter</p>
+</header>
+
+<div class="container">
+  <p>Welcome to <strong>Noor Tasbeeh</strong> — a beautiful, privacy-first app designed to support your daily Dhikr practice. Count your remembrance of Allah with elegance and ease.</p>
+
+  <h2>App Features</h2>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <h3><span class="feature-icon"><img src="images/logo.png" alt="" style="width:24px;height:24px;vertical-align:middle"></span> Digital Tasbeeh</h3>
+      <p>Animated bead counter with tap or swipe gestures. Choose from multiple Zikr with authentic Arabic text, transliteration, and translation.</p>
+    </div>
+    <div class="feature-card">
+      <h3><span class="feature-icon">📊</span> Statistics & Goals</h3>
+      <p>Track your sessions, set daily goals, and build streaks. View lifetime journey and per-day history.</p>
+    </div>
+    <div class="feature-card">
+      <h3><span class="feature-icon">🎨</span> Customization</h3>
+      <p>Custom bead skins, dark/light themes, Arabic & English, haptics, sound effects, and background patterns.</p>
+    </div>
+    <div class="feature-card">
+      <h3><span class="feature-icon">🔔</span> Daily Reminders</h3>
+      <p>Gentle morning, afternoon, and night reminders. Optional daily Hadith notifications.</p>
+    </div>
+    <div class="feature-card">
+      <h3><span class="feature-icon">🔒</span> Privacy First</h3>
+      <p>All data stays on your device. No accounts, no cloud sync, no tracking.</p>
+    </div>
+  </div>
+
+  <h2>Contact & Support</h2>
+  <div class="contact-box">
+    <p>Have questions, feedback, or need help? We'd love to hear from you.</p>
+    <p><strong>Email:</strong> <a href="mailto:Info@devinspect.com">Info@devinspect.com</a></p>
+    <p><strong>Company:</strong> DevInspect</p>
+    <p style="margin-top: 16px; font-size: 13px;">We typically respond within 1–2 business days.</p>
+  </div>
+
+  <h2>FAQ</h2>
+  <div class="faq-item">
+    <h3>Is my data private?</h3>
+    <p>Yes. All your session data, preferences, and custom Zikr are stored locally on your device. We never collect, transmit, or store your data on our servers.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Do I need an account?</h3>
+    <p>No. Noor Tasbeeh works fully offline without any sign-up. All features are available as soon as you install the app.</p>
+  </div>
+  <div class="faq-item">
+    <h3>How do I reset my stats?</h3>
+    <p>Go to Settings → Data & History. You can reset today's stats or clear all history. Both actions are irreversible.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Can I add my own Zikr?</h3>
+    <p>Yes. In the Zikr tab, tap the + button to add custom Zikr with Arabic text, transliteration, and translation.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Are reminders reliable?</h3>
+    <p>Reminders use local notifications. For best results on Android, disable battery optimization for Noor Tasbeeh in your device settings.</p>
+  </div>
+</div>
+
+<div class="footer">
+  <p>&copy; 2026 Noor Tasbeeh by <a href="mailto:Info@devinspect.com">DevInspect</a>. All rights reserved.</p>
+  <p style="margin-top: 8px;"><a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms of Service</a></p>
+</div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const theme = params.get('theme');
+  if (theme === 'light') document.body.classList.add('light');
+  const suffix = theme ? '?theme=' + theme : '';
+  document.getElementById('nav-home').href = '/' + suffix;
+  document.getElementById('nav-privacy').href = '/privacy' + suffix;
+  document.getElementById('nav-terms').href = '/terms' + suffix;
+</script>
+</body>
+</html>
