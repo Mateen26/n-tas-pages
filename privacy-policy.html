@@ -154,72 +154,80 @@
 </header>
 
 <div class="container">
-  <p class="effective-date">Effective Date: March 11, 2026</p>
+  <p class="effective-date">Effective Date: March 11, 2026 · Last updated: March 26, 2026</p>
 
   <p>Welcome to <strong>Noor Tasbeeh</strong> ("we", "our", "us"). This Privacy Policy explains how we collect, use, and protect your information when you use our mobile application.</p>
-  <p>Your privacy is important to us. Noor Tasbeeh is designed with a <strong>privacy-first approach</strong> — your spiritual journey stays private.</p>
+  <p>Your privacy is important to us. Noor Tasbeeh is designed with a <strong>privacy-first approach</strong> — your spiritual practice data stays on your device unless you use optional features that need a network, as described below.</p>
 
   <h2>1. Information We Collect</h2>
 
   <h3>1.1 Data Stored Locally</h3>
-  <p>All your personal data is stored <strong>locally on your device</strong> and is never transmitted to our servers:</p>
+  <p>Core app data is stored <strong>on your device</strong> using local storage (including MMKV). We do not operate a user account system and we do not sync your Zikr or counting data to our own servers. Local data includes, for example:</p>
   <ul>
-    <li>Noor Tasbeeh session counts and history</li>
+    <li>Tasbeeh session counts, history, and statistics</li>
     <li>Selected Zikr and custom Zikr entries</li>
     <li>Daily goals and streak data</li>
     <li>App preferences (theme, language, haptics, sound settings)</li>
-    <li>Selected bead skin customization</li>
-    <li>Reminder settings and times</li>
+    <li>Bead skin selection and related unlock state</li>
+    <li>Reminder settings (including Zikr reminder times, Hadith notification preferences, and Azan-related options such as calculation method and manual city selection)</li>
   </ul>
 
-  <h3>1.2 Data We Do NOT Collect</h3>
-  <p>We do <strong>not</strong> collect, store, or transmit:</p>
+  <h3>1.2 Optional Location (Azan / Prayer Alerts)</h3>
+  <p>If you enable <strong>Azan</strong> (prayer time) notifications and choose <strong>automatic location</strong>, the app requests <strong>foreground location</strong> permission. With your consent, the device may obtain approximate coordinates to calculate prayer times. That location is used on the device and may be sent to a <strong>third-party prayer time API</strong> (see Section 4) only to retrieve prayer times—not to our servers. We do not build a profile of your movements and we do not store your location history on our systems.</p>
+  <p>If you choose a <strong>manual city</strong> instead, fixed coordinates from a preset list are used; the device location permission is not required for that path.</p>
+
+  <h3>1.3 Data We Do NOT Collect on Our Servers</h3>
+  <p>We do <strong>not</strong> require an account and we do <strong>not</strong> maintain a central database of your Zikr content or counts. We do <strong>not</strong> intentionally collect:</p>
   <ul>
-    <li>Personal identification information (name, email, phone number)</li>
-    <li>Location data</li>
-    <li>Contacts or call logs</li>
-    <li>Photos, media, or files</li>
-    <li>Browsing history</li>
-    <li>Financial or payment information</li>
+    <li>Name, email address, or phone number through the app</li>
+    <li>Contacts, call logs, photos, or your camera roll</li>
+    <li>Your general web browsing history inside a browser we control (the app is not a web browser)</li>
   </ul>
+  <p>Payment or refund handling—if you purchase an in-app product in the future—is processed by <strong>Apple</strong> or <strong>Google</strong> according to their policies; we do not receive your full payment card number through the app.</p>
 
   <h2>2. How We Use Your Data</h2>
-  <p>Since all data is stored locally on your device, we use it solely to:</p>
+  <p>Locally stored data is used to:</p>
   <ul>
-    <li>Display your Noor Tasbeeh session history and statistics</li>
-    <li>Track your daily goals and streaks</li>
-    <li>Save your app preferences and customizations</li>
-    <li>Provide a personalized spiritual experience</li>
-    <li>Send local reminders (if enabled by you)</li>
+    <li>Display your session history and statistics inside the app</li>
+    <li>Track daily goals and streaks</li>
+    <li>Remember your preferences and custom Zikr entries</li>
+    <li>Schedule <strong>local notifications</strong> you turn on (Zikr reminders, optional Hadith reminders, optional Azan alerts)</li>
+    <li>Support optional features such as temporary bead unlocks after you choose to watch a rewarded video</li>
   </ul>
+  <p>Network requests we initiate are limited to features described in this policy (for example, prayer time lookup, optional update checks, ad delivery through Google, and optional product analytics through Microsoft Clarity in production builds—see below).</p>
 
   <h2>3. Data Storage & Security</h2>
-  <p>Your data is stored using <strong>MMKV</strong>, a high-performance key-value storage solution that operates entirely on your device. We employ the following measures:</p>
+  <p>Your app content and preferences are stored using <strong>MMKV</strong> and related on-device storage. In summary:</p>
   <ul>
-    <li><strong>Local-Only Storage:</strong> No cloud sync, no server uploads</li>
-    <li><strong>Device-Level Protection:</strong> Your data is protected by your device's built-in security (PIN, fingerprint, face unlock)</li>
-    <li><strong>No Analytics:</strong> We do not use third-party analytics or tracking tools</li>
-    <li><strong>No Cookies:</strong> The app does not use cookies or web tracking</li>
+    <li><strong>Core app data:</strong> Stored on your device; we do not operate a cloud backup of your Zikr or session history.</li>
+    <li><strong>Device-level protection:</strong> Your device passcode, biometrics, and OS security apply to the device as a whole.</li>
+    <li><strong>Product analytics:</strong> In <strong>production</strong> builds (not in developer preview builds), we use <strong>Microsoft Clarity</strong> to understand app usage and improve the product. Clarity may collect interaction and session-related data processed by Microsoft—see Section 4. Separately, <strong>Google Mobile Ads</strong> may use identifiers and diagnostics when serving ads—see Section 5.</li>
+    <li><strong>Cookies:</strong> The mobile app does not use browser cookies; ad SDKs may use device advertising identifiers according to their policies.</li>
   </ul>
 
   <h2>4. Third-Party Services</h2>
-  <p>Noor Tasbeeh may use the following third-party services:</p>
+  <p>The app may interact with the following categories of third parties (each has its own privacy policy):</p>
   <ul>
-    <li><strong>Expo / React Native:</strong> Framework for building the app</li>
-    <li><strong>Google Play Store / Apple App Store:</strong> For app distribution only</li>
+    <li><strong>Google Mobile Ads (AdMob):</strong> Serves <strong>banner</strong> ads and <strong>rewarded video</strong> ads (for example, optional bead skin unlocks and streak restore). The SDK may process device and advertising identifiers. Where supported, we request <strong>non-personalized</strong> ads.</li>
+    <li><strong>Microsoft Clarity:</strong> We use <a href="https://clarity.microsoft.com/" rel="noopener noreferrer">Microsoft Clarity</a> in production builds to collect <strong>product analytics</strong> (such as how screens are used and session insights) to improve Noor Tasbeeh. Data is processed according to <a href="https://privacy.microsoft.com/privacystatement" rel="noopener noreferrer">Microsoft’s Privacy Statement</a>. Clarity is not initialized in local development builds.</li>
+    <li><strong>Aladhan prayer times API (<a href="https://aladhan.com/" rel="noopener noreferrer">aladhan.com</a>):</strong> If you use Azan notifications, prayer times may be fetched using coordinates or preset city data sent in API requests. We do not control that third-party service.</li>
+    <li><strong>App update check:</strong> The app may fetch a small JSON file from our website (for example <code>app-version.json</code>) to compare your app version with a published latest version. This request does not include your Zikr data.</li>
+    <li><strong>Apple &amp; Google:</strong> App distribution, OS services, and optional in-app purchases are governed by their terms and privacy policies.</li>
+    <li><strong>Expo / React Native tooling:</strong> Used to build the application.</li>
   </ul>
-  <p>These services have their own privacy policies. We encourage you to review them.</p>
+  <p>We do not sell your personal information. Your locally stored Zikr text and session counts are not uploaded to us for advertising purposes.</p>
 
   <h2>5. Advertising</h2>
-  <p>The free version of Noor Tasbeeh may display advertisements. If ads are shown:</p>
+  <p>Noor Tasbeeh may show <strong>Google AdMob</strong> advertisements, including:</p>
   <ul>
-    <li>Ad networks may collect anonymized, non-personal device information</li>
-    <li>Premium users enjoy an <strong>ad-free experience</strong></li>
-    <li>We do not share your Noor Tasbeeh data with advertisers</li>
+    <li><strong>Banner</strong> ads on certain screens (for example, the main Tasbeeh screen and the Statistics screen)</li>
+    <li><strong>Rewarded</strong> video ads when you explicitly choose to watch an ad for an optional in-app benefit (such as unlocking a bead style or restoring a streak)</li>
   </ul>
+  <p>AdMob’s technologies may collect or use device identifiers, ad interaction data, and related diagnostics to measure delivery and prevent fraud, as described in <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google’s Privacy Policy</a> and <a href="https://support.google.com/admob/answer/6128543" rel="noopener noreferrer">AdMob program policies</a>. We configure requests for <strong>non-personalized ads</strong> where the platform allows. You can limit ad tracking using your device’s privacy settings (for example, “Limit Ad Tracking” on iOS or “Opt out of Ads Personalization” on Android).</p>
+  <p>If we offer a paid or subscription <strong>ad-free</strong> option in the future, details will appear in the app and in our Terms of Service.</p>
 
   <h2>6. Children's Privacy</h2>
-  <p>Noor Tasbeeh is suitable for users of all ages. We do not knowingly collect personal information from children. Since no personal data is collected or transmitted, the app is safe for use by minors under parental supervision.</p>
+  <p>Noor Tasbeeh is suitable for users of all ages. We do not knowingly ask children for name, email, or contact details. Parents and guardians should be aware that, like most mobile apps, <strong>advertising SDKs</strong> and <strong>optional network features</strong> (as described above) may process device-level data. We encourage supervision for younger users when using online features.</p>
 
   <h2>7. Data Deletion</h2>
   <p>You have full control over your data:</p>
