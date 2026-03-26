@@ -194,14 +194,14 @@
     <li>Schedule <strong>local notifications</strong> you turn on (Zikr reminders, optional Hadith reminders, optional Azan alerts)</li>
     <li>Support optional features such as temporary bead unlocks after you choose to watch a rewarded video</li>
   </ul>
-  <p>Network requests we initiate are limited to features described in this policy (for example, prayer time lookup, optional update checks, ad delivery through Google, and optional product analytics through Microsoft Clarity in production builds—see below).</p>
+  <p>Network requests we initiate are limited to features described in this policy (for example, prayer time lookup, optional update checks, ad delivery through Google, and optional product analytics through Microsoft Clarity and Google/Firebase Analytics in production builds—see below).</p>
 
   <h2>3. Data Storage & Security</h2>
   <p>Your app content and preferences are stored using <strong>MMKV</strong> and related on-device storage. In summary:</p>
   <ul>
     <li><strong>Core app data:</strong> Stored on your device; we do not operate a cloud backup of your Zikr or session history.</li>
     <li><strong>Device-level protection:</strong> Your device passcode, biometrics, and OS security apply to the device as a whole.</li>
-    <li><strong>Product analytics:</strong> In <strong>production</strong> builds (not in developer preview builds), we use <strong>Microsoft Clarity</strong> to understand app usage and improve the product. Clarity may collect interaction and session-related data processed by Microsoft—see Section 4. Separately, <strong>Google Mobile Ads</strong> may use identifiers and diagnostics when serving ads—see Section 5.</li>
+    <li><strong>Product analytics:</strong> In <strong>production</strong> builds, we may use <strong>Microsoft Clarity</strong> and <strong>Google/Firebase Analytics</strong> to understand app usage and improve the product. These analytics providers may collect interaction and session-related data and may process device identifiers—see Section 4. Separately, <strong>Google Mobile Ads</strong> may use identifiers and diagnostics when serving ads—see Section 5.</li>
     <li><strong>Cookies:</strong> The mobile app does not use browser cookies; ad SDKs may use device advertising identifiers according to their policies.</li>
   </ul>
 
@@ -209,6 +209,7 @@
   <p>The app may interact with the following categories of third parties (each has its own privacy policy):</p>
   <ul>
     <li><strong>Google Mobile Ads (AdMob):</strong> Serves <strong>banner</strong> ads and <strong>rewarded video</strong> ads (for example, optional bead skin unlocks and streak restore). The SDK may process device and advertising identifiers. Where supported, we request <strong>non-personalized</strong> ads.</li>
+    <li><strong>Google/Firebase Analytics:</strong> We use <strong>Firebase Analytics</strong> to understand app usage, measure engagement, and improve the app. Data is processed according to <a href="https://firebase.google.com/support/privacy/" target="_blank" rel="noopener noreferrer">Firebase privacy information</a> and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google’s Privacy Policy</a>.</li>
     <li><strong>Microsoft Clarity:</strong> We use <a href="https://clarity.microsoft.com/" rel="noopener noreferrer">Microsoft Clarity</a> in production builds to collect <strong>product analytics</strong> (such as how screens are used and session insights) to improve Noor Tasbeeh. Data is processed according to <a href="https://privacy.microsoft.com/privacystatement" rel="noopener noreferrer">Microsoft’s Privacy Statement</a>. Clarity is not initialized in local development builds.</li>
     <li><strong>Aladhan prayer times API (<a href="https://aladhan.com/" rel="noopener noreferrer">aladhan.com</a>):</strong> If you use Azan notifications, prayer times may be fetched using coordinates or preset city data sent in API requests. We do not control that third-party service.</li>
     <li><strong>App update check:</strong> The app may fetch a small JSON file from our website (for example <code>app-version.json</code>) to compare your app version with a published latest version. This request does not include your Zikr data.</li>
